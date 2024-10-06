@@ -14,8 +14,8 @@ readme = "README.md"
 edition = "2021"
 
 [dependencies]
-clap = "2.31.1"
 thumbsdb = "0.1.2"
 ansi_term = "0.12.1"
 thiserror = "1.0.64"
 jiff = "0.1.13"
+argh = "0.1.12"
