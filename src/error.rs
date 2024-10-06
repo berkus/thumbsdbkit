@@ -14,30 +14,10 @@
 //
 // Author: zadig <thomas chr(0x40) bailleux.me>
 
-use std;
+use thiserror::Error;
 
-#[derive(Debug)]
+#[derive(Debug, Error)]
 pub(crate) enum Error {
-  OutDirNotDir
-}
-
-impl std::error::Error for Error {
-  fn description(&self) -> &str {
-    match *self {
-      Error::OutDirNotDir => "OUTDIR isn't a directory",
-    }
-  }
-
-  fn cause(&self) -> Option<&dyn std::error::Error> {
-    match *self {
-      _ => None
-    }
-  }
-}
-
-impl std::fmt::Display for Error {
-  fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
-    use std::error::Error;
-    write!(f, "{}", self.description())
-  }
+    #[error("OUTDIR isn't a directory")]
+    OutDirNotDir,
 }
