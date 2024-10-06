@@ -19,7 +19,7 @@ use std;
 use clap;
 
 pub(crate) fn kit(all_matches: &clap::ArgMatches)
-    -> Result<(), Box<std::error::Error>> {
+    -> Result<(), Box<dyn std::error::Error>> {
 
   // ls
   if let Some(matches) = all_matches.subcommand_matches("ls") {

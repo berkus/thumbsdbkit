@@ -8,7 +8,7 @@ homepage = "https://github.com/zadlg/thumbsdbkit"
 keywords = ["forensic", "thumbsdb", "thumbnails", "parser", "command-line"]
 repository = "https://github.com/zadlg/thumbsdbkit.git"
 readme = "README.md"
-edition = "2018"
+edition = "2021"
 
 [dependencies]
 thumbsdb = "0.1.0"
