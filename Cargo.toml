@@ -1,0 +1,16 @@
+[package]
+name = "thumbsdbkit"
+version = "1.0.1"
+authors = ["Thomas BAILLEUX <thomas@bailleux.me>"]
+license = "WTFPL"
+description = "A simple forensic command line tool for analyzing and extracting thumbnails from Microsoft Thumbs.db files"
+homepage = "https://github.com/zadlg/thumbsdbkit"
+keywords = ["forensic", "thumbsdb", "thumbnails", "parser", "command-line"]
+repository = "https://github.com/zadlg/thumbsdbkit.git"
+readme = "README.md"
+
+[dependencies]
+thumbsdb = "0.1.0"
+clap = "2.31.1"
+ansi_term = "0.11.0"
+chrono = "0.4.0"
