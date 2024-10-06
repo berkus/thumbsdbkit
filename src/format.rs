@@ -14,53 +14,47 @@
 //
 // Author: zadig <thomas chr(0x40) bailleux.me>
 
-use std;
-use thumbsdb;
 use ansi_term;
 use jiff::{fmt::rfc2822::DateTimePrinter, Timestamp};
+use thumbsdb;
 
 const DIF_TIME_WINDOWS: u64 = 116444736000000000u64;
 
 pub(crate) struct Formatter {
-  pub(crate) details: bool,
-  pub(crate) idirid: bool,
-  pub(crate) color: bool
+    pub(crate) details: bool,
+    pub(crate) idirid: bool,
+    pub(crate) color: bool,
 }
 
 impl Formatter {
-
-  pub(crate) fn print_thumbnail(&self, thumbnail: &thumbsdb::Thumbnail) {
-    if self.idirid {
-      print!("{:>4} ", thumbnail.id());
-    }
-    if self.details {
-      print!("{:>8} ", self.format_date(thumbnail.time()));
-    }
-    if thumbnail.name() != "{A42CD7B6-E9B9-4D02-B7A6-288B71AD28BA}" {
-      println!("{}", self.get_name(thumbnail.name()));
-    } else {
-      println!("{}", self.get_name("<Thumbnail folder>"));
-    }
-  }
-
-  pub(crate) fn print_suffix(&self, total: usize) {
-    println!("Total {} thumbnails", total);
-  }
-
-  pub(crate) fn get_name(&self, name: &str) -> std::string::String {
-    match self.color {
-      true => match name {
-        "<Thumbnail folder>" =>
-          ansi_term::Colour::Yellow.paint(name).to_string(),
-        _ => ansi_term::Colour::Green.paint(name).to_string()
-      },
-      false => std::string::String::from(name)
-    }
-  }
-
+    pub(crate) fn print_thumbnail(&self, thumbnail: &thumbsdb::Thumbnail) {
+        if self.idirid {
+            print!("{:>4} ", thumbnail.id());
+        }
+        if self.details {
+            print!("{:>8} ", self.format_date(thumbnail.time()));
+        }
+        if thumbnail.name() != "{A42CD7B6-E9B9-4D02-B7A6-288B71AD28BA}" {
+            println!("{}", self.get_name(thumbnail.name()));
+        } else {
+            println!("{}", self.get_name("<Thumbnail folder>"));
+        }
     }
 
-  }
+    pub(crate) fn print_suffix(&self, total: usize) {
+        println!("Total {} thumbnails", total);
+    }
+
+    pub(crate) fn get_name(&self, name: &str) -> std::string::String {
+        match self.color {
+            true => match name {
+                "<Thumbnail folder>" => ansi_term::Colour::Yellow.paint(name).to_string(),
+                _ => ansi_term::Colour::Green.paint(name).to_string(),
+            },
+            false => std::string::String::from(name),
+        }
+    }
+
     fn format_date(&self, date: u64) -> String {
         if date == 0 {
             "(no date specified)".into()
