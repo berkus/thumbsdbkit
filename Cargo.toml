@@ -1,7 +1,10 @@
 [package]
 name = "thumbsdbkit"
-version = "1.0.1"
-authors = ["Thomas BAILLEUX <thomas@bailleux.me>"]
+version = "1.0.2"
+authors = [
+    "Thomas BAILLEUX <thomas@bailleux.me>",
+    "Berkus Decker <berkus+crates@madfire.net>",
+]
 license = "WTFPL"
 description = "A simple forensic command line tool for analyzing and extracting thumbnails from Microsoft Thumbs.db files"
 homepage = "https://github.com/zadlg/thumbsdbkit"
