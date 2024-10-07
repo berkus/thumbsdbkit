@@ -48,7 +48,7 @@ pub(crate) struct SubCommandLs {
     /// print the index number of each file
     #[argh(switch, short = 'i')]
     idirid: bool,
-    /// thumbs.db to analyze
+    /// a Thumbs.db file to analyze
     #[argh(positional)]
     file: String,
 }
@@ -60,7 +60,7 @@ pub(crate) struct SubCommandExtract {
     /// output directory where extracted thumbnails will be stored
     #[argh(option, short = 'o', default = "PathBuf::from(\".\")")]
     outdir: PathBuf,
-    /// thumbs.db to analyze
+    /// a Thumbs.db file to analyze
     #[argh(positional)]
     file: String,
 }

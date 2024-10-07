@@ -15,62 +15,50 @@ cargo install thumbsdbkit
 
 ```bash
 $ thumbsdbkit --help
-ThumbsDBkit 1.0.1
+Usage: thumbsdbkit <command> [<args>]
 
+ThumbsDBkit.
 
-USAGE:
-    thumbsdbkit [SUBCOMMAND]
+Options:
+  --help            display usage information
 
-FLAGS:
-    -h, --help       Prints help information
-    -V, --version    Prints version information
-
-SUBCOMMANDS:
-    extract    Extract thumbnails
-    help       Prints this message or the help of the given subcommand(s)
-    ls         List thumbnails
+Commands:
+  ls                List thumbnails.
+  extract           Extract thumbnails.
 ```
 
 ### How to list thumbnails: `ls` command
 
 ```bash
-$ thumbsdbkit help ls
-thumbsdbkit-ls
-List thumbnails
+$ thumbsdbkit ls --help
+Usage: thumbsdbkit ls <file> [-c] [-d] [-i]
 
-USAGE:
-    thumbsdbkit ls [FLAGS] <FILE>
+List thumbnails.
 
-FLAGS:
-        --color      colorize the output
-    -d, --details    print more details for each entry
-    -h, --help       Prints help information
-    -i, --idirid     print the index number of each file
-    -V, --version    Prints version information
+Positional Arguments:
+  file              a Thumbs.db file to analyze
 
-ARGS:
-    <FILE>    Thumbs.db to analyze
+Options:
+  -c, --color       colorize the output
+  -d, --details     print more details for each entry
+  -i, --idirid      print the index number of each file
+  --help            display usage information
 ```
 
 ### How to extract thumbnails: `extract` command
 
 ```bash
-$ thumbsdbkit help extract
-thumbsdbkit-extract
-Extract thumbnails
+$ thumbsdbkit extract --help
+Usage: thumbsdbkit extract <file> [-o <outdir>]
 
-USAGE:
-    thumbsdbkit extract <FILE> --out <OUTDIR>
+Extract thumbnails.
 
-FLAGS:
-    -h, --help       Prints help information
-    -V, --version    Prints version information
+Positional Arguments:
+  file              a Thumbs.db file to analyze
 
-OPTIONS:
-    -o, --out <OUTDIR>    Output directory where extracted thumbnails will be stored
-
-ARGS:
-    <FILE>    Thumbs.db to analyze
+Options:
+  -o, --outdir      output directory where extracted thumbnails will be stored
+  --help            display usage information
 ```
 
 ## License
